@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=0" />
+  <title>LANO BY NOHA PASTA | Ristorante d'Elite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cairo:wght@200;300;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --noble-black: #110101;
+      --royal-green: #0d1a15;
+      --gold-brushed: #baab8f;
+      --gold-light: #d4bc82;
+      --ivory: #f2ede4;
+      --glass-dark: rgba(255, 255, 255, 0.03);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    
+    body {
+      margin: 0;
+      background-color: var(--noble-black);
+      color: var(--ivory);
+      font-family: 'Cairo', sans-serif;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* خلفية متدرجة تمنح عمقاً للمكان */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background: 
+        radial-gradient(circle at 50% -10%, var(--royal-red) 0%, transparent 60%),
+        radial-gradient(circle at 0% 100%, #1a1a1a 0%, transparent 30%);
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      padding: 50px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .logo-wrap {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .logo-text {
+      font-family: 'Cinzel', serif;
+      font-size: 58px;
+      font-weight: 700;
+      letter-spacing: 15px;
+      color: var(--gold-brushed);
+      margin-right: -15px; /* لتوسيط الأحرف بسبب letter-spacing */
+      text-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    }
+
+    .sub-logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ivory);
+      opacity: 0.6;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Action Cards */
+    .links-grid {
+      width: 100%;
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      background: var(--glass-dark);
+      border: 1px solid rgba(157, 129, 71, 0.2);
+      padding: 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--ivory);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 2px; height: 0;
+      background: var(--gold-brushed);
+      transition: height 0.4s ease;
+    }
+
+    .card:hover {
+      background: rgba(157, 129, 71, 0.08);
+      border-color: var(--gold-brushed);
+      transform: translateX(-5px);
+    }
+
+    .card:hover::before {
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      border: 0.5px solid var(--gold-brushed);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .card-subtitle {
+      font-size: 11px;
+      color: var(--gold-light);
+      opacity: 0.7;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Special Highlight: Reservation */
+    .premium-card {
+      background: linear-gradient(145deg, #0d1a15, #080a09);
+      border: 1px solid var(--gold-brushed);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .premium-card .card-icon {
+      background: var(--gold-brushed);
+      color: var(--noble-black);
+    }
+
+    /* Showcase Image */
+    .image-container {
+      width: 100%;
+      margin: 40px 0;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(157, 129, 71, 0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .image-container img {
+      width: 100%;
+      display: block;
+      transition: transform 1s ease;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Luxury Footer */
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 25px;
+      justify-content: center;
+    }
+
+    .social-icons a {
+      color: var(--gold-brushed);
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--ivory);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: var(--gold-brushed);
+      opacity: 0.4;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    
+    <header class="header">
+      <div class="logo-wrap">
+        <div class="logo-text">LANO </div>
+      </div>
+      <div class="sub-logo">Eccellenza Italiana</div>
+    </header>
+
+    <div class="links-grid">
+      
+      <a href="https://lano-pasta.yallaqrcodes.com/branch/1/" class="card">
+        <div class="card-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+        <div class="card-content">
+          <span class="card-title">قائمة الطعام</span>
+          <span class="card-subtitle">The Culinary Gallery</span>
+        </div>
+      </a>
+
+      <a href="https://lanoai-web.vercel.app/" class="card">
+        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+        <div class="card-content">
+          <span class="card-title">الطلب الذكي</span>
+          <span class="card-subtitle">Digital Concierge</span>
+        </div>
+      </a>
+
+      <a href="https://script.google.com/macros/s/AKfycbz-MmBO2t_abTKOCa1IKnRvZ-UGTx9A6wiYizSOE5CghRRGjY3RHQCu4RckBC4iV_9ldw/exec" class="card -card">
+        <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="card-content">
+          <span class="card-title">حجز طاولة خاصة</span>
+          <span class="card-subtitle">Private Table Reservation</span>
+        </div>
+      </a>
+
+      <a href="https://wa.me/966562003125" class="card">
+        <div class="card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+        <div class="card-content">
+          <span class="card-title">الطلبات الخارجية</span>
+          <span class="card-subtitle">Exquisite Takeaway</span>
+        </div>
+      </a>
+
+      <a href="https://maps.google.com/?q=Sabya+Lano+Pasta" class="card">
+        <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="card-content">
+          <span class="card-title">موقعنا</span>
+          <span class="card-subtitle">Sabya, Saudi Arabia</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="image-container">
+      <img src="Image_202512092347.jpeg" alt="Lano Experience">
+    </div>
+
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/lano_pasta"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@lanopasta"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/966562003125"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.snapchat.com/@lano_pasta"><i class="fa-brands fa-snapchat"></i></a>
+      </div>
+      <p class="copyright">© 2026 LANO LUXURY DINING</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
