@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=0" />
-  <title>LANO BY NOHA PASTA | Ristorante d'Elite</title>
+  <title>LANO BY NUHA PASTA | Ristorante d'Elite</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cairo:wght@200;300;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Dancing+Script:wght@400;600&family=Cairo:wght@200;300;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --noble-black: #110101;
-      --royal-green: #0d1a15;
-      --gold-brushed: #baab8f;
+      --noble-black: #2b0a0a; /* لون خلفية مائل للعنابي مثل الصورة */
+      --royal-red: #4a0e0e;
+      --gold-brushed: #f2ede4; /* اللون الكريمي الموجود في اللوجو */
       --gold-light: #d4bc82;
       --ivory: #f2ede4;
-      --glass-dark: rgba(255, 255, 255, 0.03);
+      --glass-dark: rgba(255, 255, 255, 0.05);
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -30,12 +31,11 @@
       line-height: 1.6;
     }
 
-    /* خلفية متدرجة تمنح عمقاً للمكان */
     body::before {
       content: "";
       position: fixed; inset: 0;
       background: 
-        radial-gradient(circle at 50% -10%, var(--royal-red) 0%, transparent 60%),
+        radial-gradient(circle at 50% 20%, #5c1616 0%, transparent 70%),
         radial-gradient(circle at 0% 100%, #1a1a1a 0%, transparent 30%);
       z-index: -1;
     }
@@ -49,7 +49,7 @@
       align-items: center;
     }
 
-    /* Header Section */
+    /* Header Section - تعديل الخطوط هنا */
     .header {
       text-align: center;
       margin-bottom: 60px;
@@ -57,27 +57,26 @@
 
     .logo-wrap {
       position: relative;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
     }
 
     .logo-text {
-      font-family: 'Cinzel', serif;
-      font-size: 58px;
-      font-weight: 700;
-      letter-spacing: 15px;
+      font-family: 'Cormorant Garamond', serif; /* خط اللوجو الأساسي */
+      font-size: 82px;
+      font-weight: 300;
+      letter-spacing: 12px;
       color: var(--gold-brushed);
-      margin-right: -15px; /* لتوسيط الأحرف بسبب letter-spacing */
-      text-shadow: 0 10px 20px rgba(0,0,0,0.8);
+      line-height: 0.8;
+      text-transform: uppercase;
+      margin-right: -12px;
     }
 
     .sub-logo {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 14px;
-      color: var(--ivory);
-      opacity: 0.6;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      font-family: 'Dancing Script', cursive; /* خط "by nuha pasta" */
+      font-size: 26px;
+      color: var(--gold-brushed);
+      opacity: 0.9;
+      letter-spacing: 1px;
     }
 
     /* Action Cards */
@@ -90,7 +89,7 @@
     .card {
       position: relative;
       background: var(--glass-dark);
-      border: 1px solid rgba(157, 129, 71, 0.2);
+      border: 1px solid rgba(242, 237, 228, 0.1);
       padding: 22px;
       border-radius: 12px;
       text-decoration: none;
@@ -112,7 +111,7 @@
     }
 
     .card:hover {
-      background: rgba(157, 129, 71, 0.08);
+      background: rgba(242, 237, 228, 0.08);
       border-color: var(--gold-brushed);
       transform: translateX(-5px);
     }
@@ -148,31 +147,19 @@
 
     .card-subtitle {
       font-size: 11px;
+      font-family: 'Cormorant Garamond', serif;
       color: var(--gold-light);
       opacity: 0.7;
       text-transform: uppercase;
       margin-top: 2px;
     }
 
-    /* Special Highlight: Reservation */
-    .premium-card {
-      background: linear-gradient(145deg, #0d1a15, #080a09);
-      border: 1px solid var(--gold-brushed);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    }
-
-    .premium-card .card-icon {
-      background: var(--gold-brushed);
-      color: var(--noble-black);
-    }
-
-    /* Showcase Image */
     .image-container {
       width: 100%;
       margin: 40px 0;
       border-radius: 15px;
       overflow: hidden;
-      border: 1px solid rgba(157, 129, 71, 0.3);
+      border: 1px solid rgba(242, 237, 228, 0.2);
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
@@ -182,11 +169,6 @@
       transition: transform 1s ease;
     }
 
-    .image-container:hover img {
-      transform: scale(1.05);
-    }
-
-    /* Luxury Footer */
     .footer {
       text-align: center;
       margin-top: 20px;
@@ -211,9 +193,9 @@
     }
 
     .copyright {
-      font-family: 'Cinzel', serif;
-      font-size: 9px;
-      letter-spacing: 5px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
       color: var(--gold-brushed);
       opacity: 0.4;
     }
@@ -227,9 +209,9 @@
     
     <header class="header">
       <div class="logo-wrap">
-        <div class="logo-text">LANO </div>
+        <div class="logo-text">LANO</div>
       </div>
-      <div class="sub-logo">Eccellenza Italiana</div>
+      <div class="sub-logo">by nuha pasta</div>
     </header>
 
     <div class="links-grid">
@@ -250,7 +232,7 @@
         </div>
       </a>
 
-      <a href="https://script.google.com/macros/s/AKfycbz-MmBO2t_abTKOCa1IKnRvZ-UGTx9A6wiYizSOE5CghRRGjY3RHQCu4RckBC4iV_9ldw/exec" class="card -card">
+      <a href="https://script.google.com/macros/s/AKfycbz-MmBO2t_abTKOCa1IKnRvZ-UGTx9A6wiYizSOE5CghRRGjY3RHQCu4RckBC4iV_9ldw/exec" class="card">
         <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
         <div class="card-content">
           <span class="card-title">حجز طاولة خاصة</span>
@@ -265,7 +247,6 @@
           <span class="card-subtitle">Exquisite Takeaway</span>
         </div>
       </a>
-
 
       <a href="https://loyapro.com/c-r/NzAyMQ==" class="card">
         <div class="card-icon"><i class="fa-solid fa-id-card"></i></div>
@@ -296,7 +277,7 @@
         <a href="https://wa.me/966562003125"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://www.snapchat.com/@lano_pasta"><i class="fa-brands fa-snapchat"></i></a>
       </div>
-      <p class="copyright">© 2026 LANO LUXURY DINING</p>
+      <p class="copyright">© 2026 LANO DINING</p>
     </footer>
 
   </div>
