@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,13 +6,13 @@
   
   <title>LANO BY NUHA PASTA | Ristorante d'Elite</title>
 
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#2b0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="LANO">
-  
   <link rel="apple-touch-icon" href="icon-180.png">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -21,9 +20,9 @@
 
   <style>
     :root {
-      --noble-black: #2b0a0a; /* لون خلفية مائل للعنابي مثل الصورة */
+      --noble-black: #2b0a0a;
       --royal-red: #4a0e0e;
-      --gold-brushed: #f2ede4; /* اللون الكريمي الموجود في اللوجو */
+      --gold-brushed: #f2ede4;
       --gold-light: #d4bc82;
       --ivory: #f2ede4;
       --glass-dark: rgba(255, 255, 255, 0.05);
@@ -60,7 +59,6 @@
       align-items: center;
     }
 
-    /* Header Section - تعديل الخطوط هنا */
     .header {
       text-align: center;
       margin-bottom: 60px;
@@ -72,7 +70,7 @@
     }
 
     .logo-text {
-      font-family: 'Cormorant Garamond', serif; /* خط اللوجو الأساسي */
+      font-family: 'Cormorant Garamond', serif;
       font-size: 82px;
       font-weight: 300;
       letter-spacing: 12px;
@@ -83,14 +81,13 @@
     }
 
     .sub-logo {
-      font-family: 'Dancing Script', cursive; /* خط "by nuha pasta" */
+      font-family: 'Dancing Script', cursive;
       font-size: 26px;
       color: var(--gold-brushed);
       opacity: 0.9;
       letter-spacing: 1px;
     }
 
-    /* Action Cards */
     .links-grid {
       width: 100%;
       display: grid;
@@ -210,7 +207,6 @@
       color: var(--gold-brushed);
       opacity: 0.4;
     }
-
   </style>
 </head>
 
@@ -226,7 +222,6 @@
     </header>
 
     <div class="links-grid">
-      
       <a href="https://lano-pasta.yallaqrcodes.com/branch/1/" class="card">
         <div class="card-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
         <div class="card-content">
@@ -234,7 +229,6 @@
           <span class="card-subtitle">The Culinary Gallery</span>
         </div>
       </a>
-
 
       <a href="https://script.google.com/macros/s/AKfycbxI2ZW3E45BtSretOJYpo2nplorQj06_Hudn8NAr3NBr4s6Ww-Ts32giSfY4rRYFclB/exec" class="card">
         <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
@@ -260,14 +254,13 @@
         </div>
       </a>
 
-      <a href="https://maps.google.com/?q=Sabya+Lano+Pasta" class="card">
+      <a href="https://maps.google.com/?q=Sabya+Saudi+Arabia" class="card">
         <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
         <div class="card-content">
           <span class="card-title">موقعنا</span>
           <span class="card-subtitle">Sabya, Saudi Arabia</span>
         </div>
       </a>
-
     </div>
 
     <div class="image-container">
@@ -285,6 +278,18 @@
     </footer>
 
   </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('ServiceWorker registration successful');
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 
 </body>
 </html>
