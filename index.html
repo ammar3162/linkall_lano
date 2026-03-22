@@ -21,7 +21,7 @@
   <style>
     :root {
       --noble-black: #2b0a0a;
-      --royal-red: #4a0e0e;
+      --royal-red: #7B2227;
       --gold-brushed: #f2ede4;
       --gold-light: #d4bc82;
       --ivory: #f2ede4;
@@ -45,7 +45,7 @@
       content: "";
       position: fixed; inset: 0;
       background: 
-        radial-gradient(circle at 50% 20%, #5c1616 0%, transparent 70%),
+        radial-gradient(circle at 50% 20%, #7a292d 0%, transparent 70%),
         radial-gradient(circle at 0% 100%, #1a1a1a 0%, transparent 30%);
       z-index: -1;
     }
@@ -69,23 +69,13 @@
       margin-bottom: 5px;
     }
 
-    .logo-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 82px;
-      font-weight: 300;
-      letter-spacing: 12px;
-      color: var(--gold-brushed);
-      line-height: 0.8;
-      text-transform: uppercase;
-      margin-right: -12px;
-    }
-
-    .sub-logo {
-      font-family: 'Dancing Script', cursive;
-      font-size: 26px;
-      color: var(--gold-brushed);
-      opacity: 0.9;
-      letter-spacing: 1px;
+    /* شعار الصورة */
+    .logo-img {
+      width: 260px;
+      max-width: 90%;
+      display: block;
+      margin: 0 auto;
+      filter: brightness(1.08) drop-shadow(0 2px 18px rgba(212,188,130,0.18));
     }
 
     .links-grid {
@@ -216,9 +206,12 @@
     
     <header class="header">
       <div class="logo-wrap">
-        <div class="logo-text">LANO</div>
+        <img 
+          class="logo-img" 
+          src="logo.jpg" 
+          alt="LANO by nuha pasta"
+        >
       </div>
-      <div class="sub-logo">by nuha pasta</div>
     </header>
 
     <div class="links-grid">
@@ -254,7 +247,7 @@
         </div>
       </a>
 
-      <a href="https://maps.google.com/?q=Sabya+Saudi+Arabia" class="card">
+      <a href="https://maps.app.goo.gl/PvF4euyRYNDq6grw7" class="card">
         <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
         <div class="card-content">
           <span class="card-title">موقعنا</span>
